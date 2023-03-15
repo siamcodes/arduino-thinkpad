@@ -1,18 +1,18 @@
 void Trac(int MotorSpeed) { //เดินตามเส้นธรรมดา
   ConvertADC();
   if (C == 0) Forward(MotorSpeed, 1);
-  else if (L3 == 0) tl(70);
-  else if (L2 == 0) tl(50);
-  else if (L1 == 0) tl(30);
-  else if (R3 == 0) tr(70);
-  else if (R2 == 0) tr(50);
-  else if (R1 == 0) tr(30);
+  else if (L3 == 0) sl(70);
+  else if (L2 == 0) sl(50);
+  else if (L1 == 0) sl(30);
+  else if (R3 == 0) sr(70);
+  else if (R2 == 0) sr(50);
+  else if (R1 == 0) sr(30);
 }
 
 void TracNormalJC(int MotorSpeed, int Time) {  //แทรกเส้นธรรมดาเจอแยกหยุด
-  Forward(MotorSpeed, 1);
+  Forward(MotorSpeed, Time);
   ConvertADC();
-  while (L2 == 1 || R2 == 1) {  //ยังไม่เจอแยก
+  while (L2 == 1  || R2 == 1) { //ยังไม่เจอแยก
     Trac(MotorSpeed);
   }
   Forward(MotorSpeed, Time);  //เดินหน้าไปอีกนิดตาม Time
