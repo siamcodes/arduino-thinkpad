@@ -13,6 +13,7 @@ void TracNormalJC(int MotorSpeed, int Time) {  //แทรกเส้นธร�
   Forward(MotorSpeed, Time);
   ConvertADC();
   while (L2 == 1  || R2 == 1) { //ยังไม่เจอแยก
+  //  CheckObstacle();            //เช็คสิ่งกีดขวาง
     Trac(MotorSpeed);
   }
   Forward(MotorSpeed, Time);  //เดินหน้าไปอีกนิดตาม Time

@@ -24,7 +24,6 @@ void TracNormalTime(int MotorSpeed, int Time) { //แทรกเส้นธร
 }
 
 
-
 void TracBW(int MotorSpeed) { //เดินตามเส้นธรรมดา
   ConvertADC();
   if (BL == 1 && BR == 1) Backward(MotorSpeed, 1);

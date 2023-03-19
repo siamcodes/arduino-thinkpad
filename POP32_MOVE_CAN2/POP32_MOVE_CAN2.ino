@@ -1,6 +1,6 @@
 #include <POP32.h>
-int L3, L2, L1, C, R1, R2, R3, Dist; //ตัวแแปรเก็บค่าเซนนเซอร์
-int RefL3, RefL2, RefL1, RefC, RefR1, RefR2, RefR3; //ตัวแปรเก็บค่าเฉลี่ยเซนนเซอร์
+int FL, FR, BL, BR; //ตัวแแปรเก็บค่าเซนนเซอร์
+int RefFL, RefFR, RefBL, RefBR; //ตัวแปรเก็บค่าเฉลี่ยเซนนเซอร์
 int Speed, ACCSpeed, SlowSpeed, TurnSpeed, LeftSpeed, RightSpeed; //ตัวแแปรความเร็วมอเตอร์
 long Timer0, StartTimer0, Timer1, StartTimer1;   //ตัวแปรจับเวลา Timer0=จับเวลาการแทรคเส้น Timer1=ใช้เวลาของภาระกิจ
 int Kp, Ki, Kd, Error, PreError, Integral, MaxSpeed; //ตัวแปรแกี่ยวกับ PID
@@ -10,30 +10,34 @@ void setup() {
   Speed = 50;  //ความเร็วปกติ 70
   ACCSpeed = 100;  //ความเร็วตอนเร่ง 100
   SlowSpeed = 30; //ความเร็วตอนช้า 50
-  TurnSpeed = 70;  //ความเร็วตอนเลี้ยว 70
-
-  //ShowLCD();      //แสดงค่าเริ่มต้น LCD ตอนเปิิดเครื่อง
+  TurnSpeed = 30;  //ความเร็วตอนเลี้ยว 70
   beep(1);        //เสียงบัซเซอร์ 0-3
+
+  //GripDown();     //ยกแขนลง
+  Grip();         //คีบ
+  //GripUp();       //ยกแขนขึ้น
+  Put();          //ปล่อย
+
+  //ShowLCD();      //แสดงค่าเริ่มต้น LCD ตอนเปิดเครื่อง
   ShowADC();     //แสดงค่าที่อ่านจากเซนเซอร์
   InitialADC();  //ใส่ค่าเฉลี่ยของเซนเซอร์สี
   sw_ok_press();  //รอจนกว่าจพกดปุ่ม ok
   beep(1);        //เสียงบัซเซอร์ 0-3
-  // Forward(Speed, 1000); //เดินหน้าหน่วงเวลา วิ่งที่ 50% เป็นนเวลา 2 วินาที
+  // Forward(Speed, 1000); //เดินหน้าหน่วงเวลา
+  // Backward(Speed,1000);
+  // TracNormalJC(Speed,50);
   // TurnLeft();
   // TurnRight();
   // UTurn();
-  // TracNormalJC(Speed, 50);
-  // TracNormalSonar(Speed, 5);
-  // TracNomalTime(ACCSpeed,1000);
+
   // MotorStop();
-  ResetTimer1();
-  // InitialSpeed(Speed);  //ทดสอบวิ่งที่ 50 เปิดใช้คู่กับ CalError() และ TracPID() ที่อยู่ใน loop()
+    ResetTimer1();  //เปิดใช้งานคู่กับ Finish()
 }
 
 void loop() {
-  // ShowADC();
-  // TracNormalJC(Speed,200);
-   TracJC(Speed, 1);
-  // Can1();
-  // Finish();
+  // TracNormalJC(Speed,1);
+  // TracJC(Speed,0);
+  // CN1();
+   MoveCan();
+   Finish();
 }

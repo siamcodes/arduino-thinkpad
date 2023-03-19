@@ -1,4 +1,4 @@
-#include <ATX2.h>
+   #include <ATX2.h>
 int FL, FR, BL, BR; //ตัวแแปรเก็บค่าเซนนเซอร์
 int RefFL, RefFR, RefBL, RefBR; //ตัวแปรเก็บค่าเฉลี่ยเซนนเซอร์
 int Speed, ACCSpeed, SlowSpeed, TurnSpeed, LeftSpeed, RightSpeed; //ตัวแแปรความเร็วมอเตอร์
@@ -7,7 +7,7 @@ int Kp, Ki, Kd, Error, PreError, Integral, MaxSpeed; //ตัวแปรแก�
 int Sonar;
 
 void setup() {
-  Speed = 75;  //ความเร็วปกติ 70
+  Speed = 70;  //ความเร็วปกติ 70
   ACCSpeed = 100;  //ความเร็วตอนเร่ง 100
   SlowSpeed = 30; //ความเร็วตอนช้า 50
   TurnSpeed = 50;  //ความเร็วตอนเลี้ยว 70
@@ -29,11 +29,8 @@ void setup() {
   // TurnLeft();
   // TurnRight();
   // UTurn();
-  // TracNormalJC(Speed, 50);
-  // TracNomalTime(ACCSpeed,1000);
   // MotorStop();
   ResetTimer1();
-  // InitialSpeed(50);  //ทดสอบวิ่งที่ 50
 }
 
 void loop() {

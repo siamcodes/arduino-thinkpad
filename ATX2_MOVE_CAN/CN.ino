@@ -46,39 +46,41 @@ void CN2()  //สนาม WRG
 
 void MoveCan() {
   Forward(SlowSpeed, 100);       //เดินจากจุดเริ่มต้น
-
+  GripDown();     //ยกแขนลง
   for (int i = 1; i <= 3; i++) {
-    TracNormalJC(Speed, 3);      //แทรกเดินเตรียมเลี้ยว A
+    TracNormalJC(Speed, 40);      //แทรกเดินเตรียมเลี้ยว A
     GripCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 30);
     TurnRight();
-    TracNormalJC(Speed, 20);      //แทรกเดินเตรียมเลี้ยว B
+    TracNormalJC(Speed, 50);      //แทรกเดินเตรียมเลี้ยว B
     PutCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 3);
     TurnRight();
-    TracNormalJC(Speed, 3);      //แทรกเดินเตรียมเลี้ยว C
+    TracNormalJC(Speed, 40);      //แทรกเดินเตรียมเลี้ยว C
     GripCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 30);
     TurnRight();
-    TracNormalJC(Speed, 20);      //แทรกเดินเตรียมเลี้ยว D
+    TracNormalJC(Speed, 50);      //แทรกเดินเตรียมเลี้ยว D
     PutCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 30);
     UTurn();
-    TracNormalJC(Speed, 3);      //แทรกเดินเตรียมเลี้ยว B
+    TracNormalJC(Speed, 40);      //แทรกเดินเตรียมเลี้ยว B
     GripCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 30);
     TurnRight();
-    TracNormalJC(Speed, 20);      //แทรกเดินเตรียมเลี้ยว C
+    TracNormalJC(Speed, 50);      //แทรกเดินเตรียมเลี้ยว C
     PutCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 40);
     TurnRight();
-    TracNormalJC(Speed, 3);      //แทรกเดินเตรียมเลี้ยว D
+    TracNormalJC(Speed, 40);      //แทรกเดินเตรียมเลี้ยว D
     GripCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 40);
     TurnRight();
-    TracNormalJC(Speed, 20);      //แทรกเดินเตรียมเลี้ยว A
+    TracNormalJC(Speed, 50);      //แทรกเดินเตรียมเลี้ยว A
     PutCan();
-    TracNormalBW(Speed, 50);
+    TracNormalBW(ACCSpeed, 40);
+    ao();
+    delay(200);
   }
 
   TracNormalTime(ACCSpeed, 100); //แทรกหน่วงเวลา
