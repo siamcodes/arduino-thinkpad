@@ -8,11 +8,13 @@ int s2 = 3;
 int s3 = 4;
 int s4 = 5;
 
+
 void setup() {
   pinMode(s1, INPUT);
   pinMode(s2, INPUT);
   pinMode(s3, INPUT);
   pinMode(s4, INPUT);
+  
   Serial.begin(9600);
   lcd.begin();
   //lcd.noBacklight();   // ปิด backlight
@@ -24,6 +26,7 @@ void setup() {
 }
 
 void loop() {
+  analogWrite(9,150);
 
   if (digitalRead(s1) == 1) {
     one += 1;
