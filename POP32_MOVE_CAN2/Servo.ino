@@ -1,14 +1,14 @@
 void ServoGrip() {  //กำหนดองศาการคีบ
-  for (int pos = 90; pos >= 0; pos -= 1) { //90-20 องศา
+  for (int pos = 60; pos >= 0; pos -= 1) { //90-20 องศา
     servo(1, pos); //1=Servo1, 70=องศาServo
-    delay(5);
+    delay(1);
   }
 }
 
 void ServoPut() {   //กำหนดองศาการปล่อย  90 องศา
-  for (int pos = 0; pos <= 90; pos += 1) { //20-90 องศา
+  for (int pos = 0; pos <= 60; pos += 1) { //20-90 องศา
     servo(1, pos);
-    delay(5);
+    delay(2);
   }
 }
 
@@ -48,13 +48,13 @@ void GripDown() { //ยกแขนลงหน่วงเวลา
 }
 
 void GripCan() {
-  GripDown();     //ยกแขนลง
+  //GripDown();     //ยกแขนลง
   Grip();         //คีบ
-  GripUp();       //ยกแขนขึ้น
+  //GripUp();       //ยกแขนขึ้น
 }
 
 void PutCan() {
-  GripDown();     //ยกแขนลง
+  //GripDown();     //ยกแขนลง
   Put();          //ปล่อย
-  GripUp();       //ยกแขนขึ้น
+  //GripUp();       //ยกแขนขึ้น
 }

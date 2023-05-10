@@ -1,153 +1,59 @@
-void Can1() {               //สนาม WRG
-  Forward(Speed, 30);
-  TracJC(Speed, 30);        //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 1
-  TracJC(SlowSpeed, 20);    //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 2
-  TracJC(Speed, 30);        //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 3
-  TracJC(Speed, 30);        //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 4
-  TracJC(Speed, 30);        //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 5
-  TracJC(Speed, 50);        //เตรียมเลี้ยว
-  TurnRight();              //เลี้ยวขวา 6
-  TracJC(Speed, 50);        //เตรียมเลี้ยว
-  TurnRight();              //เลี้ยวขวา 7
-  TracJC(Speed, 50);        //เดินข้ามแยก8
-  TracJC(SlowSpeed, 20);    //เตรียมเลี้ยว
-  TurnRight();              //เลี้ยวขวา 9
-  TracJC(SlowSpeed, 50);    //เตรียมเลี้ยว
-  TracJC(Speed, 50);        //เดินข้ามแยก10
-  TracJC(SlowSpeed, 20);    //เตรียมเลี้ยว
-  TracJC(SlowSpeed, 50);    //เดินข้ามแยก11
-  TracJC(SlowSpeed, 30);    //เตรียมเลี้ยว
-  TurnLeft();               //เลี้ยวซ้าย 12
-  TracJC(ACCSpeed, 200);    //เดินข้ามแยก13
-  TracJC(ACCSpeed, 200);    //เดินข้ามแยก14
-}
+void MRC() {
+  Forward(SlowSpeed, 100);
 
-void  Can2() {
-  Forward(Speed, 30);
-  for (int i = 1; i <= 7; i++) {
-    TracNormalJC(Speed, 50);     // เตรียมเลี้ยว
-    TurnLeft();                  // เลี้ยวซ้าย 1
-  }
-  TracNormalJC(Speed, 50);       // เตรียมเลี้ยว
-  UTurn();                       // เลี้ยวซ้าย 1
-  for (int i = 1; i <= 7; i++) {
-    TracNormalJC(Speed, 50);    // เตรียมเลี้ยว
-    TurnRight();                // เลี้ยวซ้าย 1
-  }
-  TracNormalTime(ACCSpeed, 500); //แทรกหน่วงเวลา 15
-}
+  TracJC(Speed, 30);
+  TurnRight();   //1
+  TracJC(Speed, 50);
+  TurnRight();    //2
+  TracJC(Speed, 50);
+  TurnRight();    //3
 
-void Can3() {
-  Forward(Speed, 50);           //เดินจากจุดเริ่มต้น 200
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracJC(SlowSpeed, 50);
-  TurnRight();                  //เลี้ยว
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracJC(SlowSpeed, 50);        //แทรกเดินเตรีียมเลี้ยว
-  TurnLeft();                   //เลี้ยว
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracJC(SlowSpeed, 50);        //เตรียมเลี้ยว
-  TurnLeft();                   //เลี้ยว
-  TracJC(SlowSpeed, 50);        //เตรียมเลี้ยว
-  TurnLeft();                   //เลี้ยว
-  for (int i = 1; i <= 2; i++) {
-    TracJC(Speed, 50);          //แทรกเดินตรง1-2
-  }
-  TracTime(Speed, 500);         //แทรกหน่วงเวลา
-}
+  TracTime(ACCSpeed, 14000);  //โค้ง
+  TracTime(SlowSpeed, 3000);  //แยก-เหลี่ยม
+  TracTime(ACCSpeed, 10000);
 
+  TracJC(SlowSpeed, 30);
+  TurnLeft();//4
+  TracJC(SlowSpeed, 30);
+  TurnLeft();      //5
+  TracJC(70, 100); //6  ข้ามแยก
+  TracJC(SlowSpeed, 30);
+  TurnLeft();     //7
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //8
+  TracJC(70, 100);  //9  ข้ามแยก
+  TracJC(SlowSpeed, 30);
+  TurnLeft();     //10
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //11
 
-void MoveCan() {
-  Forward(Speed, 50);           //เดินจากจุดเริ่มต้น 200
-  for (int i = 1; i <= 5; i++) {
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(SlowSpeed, 20);            //ข้ามแยก
+  TracTime(ACCSpeed, 12000);  //โค้ง
+  TracTime(SlowSpeed, 3000);  //แยก-เหลี่ยม
+  TracTime(ACCSpeed, 10000);
 
-    GripDown();     //ยกแขนลง
-    Grip();         //คีบ
-    GripUp();       //ยกแขนขึ้น
-    UTurn();
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(SlowSpeed, 20);            //ข้ามแยก
-    GripDown();     //ยกแขนลง
-    Put();          //ปล่อย
-    UTurn();
-  }
-}
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //12
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //13
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //14
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //15
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //16
+  TracJC(SlowSpeed, 30);
+  TurnLeft();    //17
 
-void MoveCan2() {
-  Forward(Speed, 50);           //เดินจากจุดเริ่มต้น 200
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracJC(Speed, 50);            //ข้ามแยก
-  for (int i = 1; i <= 3; i++) {
-    TracJC(SlowSpeed, 30);            //ข้ามแยก
-    GripDown();     //ยกแขนลง
-    Grip();         //คีบ
-    GripUp();       //ยกแขนขึ้น
-    UTurn();
-    TracJC(SlowSpeed, 50);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(SlowSpeed, 30);            //ข้ามแยก
-    GripDown();     //ยกแขนลง
-    Put();          //ปล่อย
-    Grip();         //คีบ
-    GripUp();       //ยกแขนขึ้น
-    UTurn();
-    TracJC(Speed, 50);            //ข้ามแยก
-    TracJC(SlowSpeed, 50);        //แทรกเดินเตรีียมเลี้ยว
-    TurnRight();
-  }
-  UTurn();
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracJC(Speed, 50);            //ข้ามแยก
-  TracTime(Speed, 500);         //แทรกหน่วงเวลา
-  UTurn();
-}
+  TracTime(ACCSpeed, 12000);  //โค้ง
+  TracTime(SlowSpeed, 3000);  //แยก-เหลี่ยม
+  TracTime(ACCSpeed, 10000);
 
-
-void Movecan3() {
-  Forward(Speed, 50);           //เดินจากจุดเริ่มต้น 200
-  for (int i = 1; i <= 3; i++) {
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);            //ข้ามแยก
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    TurnLeft();
-     TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    TracJC(Speed, 30);        //แทรกเดินเตรีียมเลี้ยว
-    UTurn();
-    }
-    TracTime(Speed, 1000);         //แทรกหน่วงเวลา
-
+  TracJC(SlowSpeed, 30);
+  TurnRight();   //18
+  TracJC(SlowSpeed, 30);
+  TurnRight();    //19
+  TracJC(SlowSpeed, 30);
+  TurnRight();    //20
+  TracTime(Speed, 2000);     //แทรกหน่วงเวลา
+  TracTime(ACCSpeed, 20000);     //แทรกหน่วงเวลา
 }

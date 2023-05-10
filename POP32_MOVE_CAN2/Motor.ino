@@ -18,7 +18,7 @@ void Backward(int MotorSpeed, int Time){  //เดินหน้าหน่ว
 void TurnLeft() { //เลี้ยวซ้าย
   MotorStop();
   sl(TurnSpeed); //หมุนซ้าย
-  delay(150);
+  delay(170);
   ConvertADC();
   while (FL == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
     ConvertADC();
@@ -29,7 +29,7 @@ void TurnLeft() { //เลี้ยวซ้าย
 void TurnRight() { //เลี้ยวขวา
   MotorStop();
   sr(TurnSpeed); //หมุนซ้าย
-  delay(150);    //ปรับค่าให้เลี้ยวตรงเส้น
+  delay(170);    //ปรับค่าให้เลี้ยวตรงเส้น
   ConvertADC();
   while (FR == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
     ConvertADC();
