@@ -19,26 +19,26 @@ void ServoGripDown() { //กำหนดองศาการยกลง
 
 
 void Grip() { //คีบหน่วงเวลา
-  ao();
+  AO();
   ServoGrip();
   delay(400);
 }
 
 void Put() { //ปล่อยหน่วงเวลา
-  ao();
+  AO();
   ServoPut();
   delay(200);
 }
 
 void GripUp() { //ยกแขนขึ้นหน่วงเวลา
-  ao();
+  AO();
   ServoGripUp();
   delay(500);
 }
 
 
 void GripDown() { //ยกแขนลงหน่วงเวลา
-  ao();
+  AO();
   ServoGripDown();
   delay(500);
 }

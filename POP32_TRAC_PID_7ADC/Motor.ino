@@ -5,13 +5,13 @@ void MotorStop(){ //มอเตอร์หยุด
 
 void Forward(int MotorSpeed, int Time){  //เดินหน้าหน่วงเวลา
   InitialSpeed(MotorSpeed);  //กำหนดความเร็วมอเตอร์
-  FD2(LeftSpeed, RightSpeed);  //เดินไปข้างหน้า
+  fd2(LeftSpeed, RightSpeed);  //เดินไปข้างหน้า
   delay(Time);
 }
 
 void Backward(int MotorSpeed, int Time){  //เดินหน้าหน่วงเวลา
   InitialSpeed(MotorSpeed);  //กำหนดความเร็วมอเตอร์
-  BK2(LeftSpeed, RightSpeed);  //เดินไปข้างหน้า
+  bk2(LeftSpeed, RightSpeed);  //เดินไปข้างหน้า
   delay(Time);
 }
 

@@ -7,7 +7,6 @@ void ReadTimer0(){  //อ่านค่า Timer0
   Timer0 = millis() - StartTimer0;  //เอาเวลาปัจจุบัน - เวลาเริ่มต้น
 }
 
-
 void ResetTimer1() { //เริ่มใช้งาน Timer1
   StartTimer1 = millis();  //เก็บเวลาเริมต้นนใน StartTimer1
   Timer1 = 0;   //เคลียร์ Timer1

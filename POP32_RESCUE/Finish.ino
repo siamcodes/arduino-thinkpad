@@ -1,12 +1,7 @@
 void Finish() { //หุ่นยนต์หยุดและแสดงเวลาทั้งหมด
   ReadTimer1();
-  ao();
+  AO();
   beep(1);
-  //  glcdClear();
-  //  setTextSize(2);
-  //  glcd(0, 0, "Finish");
-  //  glcd(1, 0, "Time = %l.%l s", Timer1 / 1000, Timer1 % 1000);
-
   oled.clear();
   oled.text(0, 0, "Finish");
   oled.text(1, 0, "Time = %l.%l s", Timer1 / 1000, Timer1 % 1000);
