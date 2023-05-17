@@ -1,20 +1,20 @@
 void ServoGrip() { //กำหนดองศาการคีบ
-  for (int pos = 0; pos <= 10; pos += 1) {
-    servo(2, pos);
-    delay(pos);
+  for (int pos = 90; pos >= 0; pos -= 1) {
+    servo(1, pos);
+    delay(5);
   }
 }
 
 void ServoPut() { //กำหนดองศาการปล่อย
-  servo(2, 120);
+  servo(1, 90);
 }
 
 void ServoGripUp() { //กำหนดองศาการยกขึ้น
-  servo(1, 0);
+  servo(2, 0);
 }
 
 void ServoGripDown() { //กำหนดองศาการยกลง
-  servo(1, 90);
+  servo(2, 90);
 }
 
 
