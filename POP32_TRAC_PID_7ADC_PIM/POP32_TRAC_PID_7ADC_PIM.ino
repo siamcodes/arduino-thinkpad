@@ -10,7 +10,7 @@ void setup() {
   Speed = 50;  //ความเร็วปกติ 70
   ACCSpeed = 100;  //ความเร็วตอนเร่ง 100
   SlowSpeed = 40; //ความเร็วตอนช้า 50
-  TurnSpeed = 50;  //ความเร็วตอนเลี้ยว 70
+  TurnSpeed = 60;  //ความเร็วตอนเลี้ยว 70
 
   //ShowLCD();      //แสดงค่าเริ่มต้น LCD ตอนเปิิดเครื่อง
   beep(1);        //เสียงบัซเซอร์ 0-3
@@ -20,7 +20,7 @@ void setup() {
   beep(1);        //เสียงบัซเซอร์ 0-3
 
   //Forward(Speed, 100); //เดินหน้าหน่วงเวลา วิ่งที่ 50% เป็นนเวลา 2 วินาที
-  //TracJC(Speed, 40);
+  //TracJC(Speed, 0);
   //TurnRight();
   //TracJC(Speed, 40);
   //TurnLeft();
@@ -33,6 +33,8 @@ void setup() {
 }
 
 void loop() {
+  //Forward(Speed, 100); //เดินหน้าหน่วงเวลา วิ่งที่ 50% เป็นนเวลา 2 วินาที
+  //-TracJC(Speed, 0);
   // TracNormalJC(Speed,200);
   //TracJC(Speed, 50);
   //MRC();

@@ -72,21 +72,15 @@ void MRC() {  // 1-16สมบูรณ์ ยกเว้น 12 กับตั
 
 void PIM() {
   Forward(Speed, 100);
-  TracJC(SlowSpeed, 100);
-  TracJC(SlowSpeed, 50);
+  TracJC(Speed, 0);
   TurnRight();
-  TracJC(SlowSpeed, 100);
-  TracJC(Speed, 50);
+  TracJC(Speed, 0);
+  TurnRight();
+  TracJC(Speed, 0);
   TurnLeft();
-  TracJC(SlowSpeed, 100);
-  TracTime(ACCSpeed,200);
-  TracJC(Speed, 50);
+  TracJC(Speed, 0);
   TurnLeft();
-  TracTime(ACCSpeed,200);
-  TracJC(Speed, 50);
-  TurnLeft();
-  TracJC(SlowSpeed, 100);
-  TracJC(SlowSpeed, 100);
-  TracJC(SlowSpeed, 100);
+  TracJC(Speed, 100);
+  TracJC(Speed, 100);
   UTurnLeft();
 }

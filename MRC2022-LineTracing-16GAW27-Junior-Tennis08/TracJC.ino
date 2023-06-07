@@ -19,12 +19,7 @@ void TracJCStop()
       }
       else  //เจอสิ่งกีดขวาง
       { 
-        if(Sonar()<=DistanceRef) CurveLeft(60,70); 
-       
-          
-       
-        
-        
+        if(Sonar()<=DistanceRef) CurveLeft(60,70);    
       }
     }
     else    //ไม่เช็คสิ่งกีดขวาง
@@ -38,6 +33,7 @@ void TracJCStop()
     }
   }
 }
+
 void TracJC() 
 {
   TracJCStop();
@@ -47,11 +43,13 @@ void TracJC()
   else if(BaseSpeed<=60) delay(1000/BaseSpeed); 
   else if(BaseSpeed<=70) delay(1000/BaseSpeed); 
 }
+
 void TracJCStraight() 
 {
   TracJC();
   ForwardDelay(5000/BaseSpeed);
 }
+
 void TracJCSlowStop() 
 {
   BaseSpeed = SlowSpeed;
@@ -59,6 +57,7 @@ void TracJCSlowStop()
   BaseSpeed = Speed;
   InitialSpeed();
 }
+
 void TracJCSlow() {
   TracJCSlowStop();
   Forward();
@@ -67,6 +66,7 @@ void TracJCSlow() {
     CalError();
   }
 }
+
 void TracJCSpeedTime(int MotorSpeed, int TimeDelay) {
   BaseSpeed = MotorSpeed;
   TracJCStop();
@@ -75,6 +75,7 @@ void TracJCSpeedTime(int MotorSpeed, int TimeDelay) {
   BaseSpeed = Speed;
   InitialSpeed();
 }
+
 void TracJCSpeed() 
 {
   BaseSpeed = ACCSpeed;
@@ -88,6 +89,7 @@ void TracJCSpeed()
   BaseSpeed = Speed;
   InitialSpeed();
 }
+
 void TracSpeedTime(int TracSpeed, int TracTime) {
   BaseSpeed = TracSpeed;
   InitialSpeed();
@@ -102,6 +104,7 @@ void TracSpeedTime(int TracSpeed, int TracTime) {
   BaseSpeed = Speed;
   InitialSpeed();
 }
+
 void TracJCSpeedStop() 
 {
   BaseSpeed = ACCSpeed;
@@ -109,6 +112,7 @@ void TracJCSpeedStop()
   BaseSpeed = Speed;
   InitialSpeed();
 }
+
 void TracJCSpeedStop99() 
 {
   BaseSpeed = ACCSpeed;

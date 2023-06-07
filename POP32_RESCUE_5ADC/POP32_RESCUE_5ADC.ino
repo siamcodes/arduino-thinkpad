@@ -16,13 +16,13 @@ void setup() {
   beep(0);
   delay(100);
 
-  //Forward(RobotSpeed,2000);
-  //Backward(RobotSpeed,2000);
-  //TurnLeft();
+  Forward(RobotSpeed,1000);
+  Backward(RobotSpeed,1000);
+  TurnLeft();
   //ForwardBalance();
   //TrackJCBalance(RobotSpeed,100);
   //BackwardBalance();
-  Box1();
+  //Box1();
   //TrackSpeedTimer(AccSpeed,500);
   MotorStop();
 }

@@ -4,6 +4,7 @@ void ConvertADC()
   if(L1<RefL1) L1 = 0;else L1 = 1;  //0:ดำ 1:ขาว
   if(R1<RefR1) R1 = 0;else R1 = 1;
 }
+
 void CalError() {
   ConvertADC();
   if((L1==1)&&(R1==0)) Error = 1;  
@@ -12,6 +13,7 @@ void CalError() {
   else if((L1==0)&&(R1==0)) Error = 100; 
 
 }
+
 void TracPID()  {
   int Output, LeftSpeed, RightSpeed;
   Output = (Kp*Error) + (Ki*SumError) + (Kd*(Error-PreError));
@@ -20,6 +22,7 @@ void TracPID()  {
   if(LeftSpeed>MaxSpeed) LeftSpeed = MaxSpeed;
   else if(LeftSpeed<-MaxSpeed) LeftSpeed = -MaxSpeed;
   //else if(LeftSpeed<0) LeftSpeed = 0;//new pid
+  
   if(RightSpeed>MaxSpeed) RightSpeed = MaxSpeed;
   else if(RightSpeed<-MaxSpeed) RightSpeed = -MaxSpeed;
   //else if(RightSpeed<0) RightSpeed = 0;//new pid

@@ -2,6 +2,7 @@ void Read2Analog() {
   L1 = analog(2); 
   R1 = analog(3);
 }
+
 int Sonar()
 {
   int Sonar;
