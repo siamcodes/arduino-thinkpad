@@ -16,6 +16,7 @@ else if(C==0) Error=100;
 //else if((L3==0)&&(L2==0)&&(L1==0)) Error=101;
 //else if((R1==0)&&(R2==0)&&(R3==0)) Error=102;
 }
+
 void TrackPID(int MotorSpeed) //เคลื่อนที่ตามช่องแบบ PID
 {
   int Output,LeftOutput,RightOutput,MaxSpeed=100;
