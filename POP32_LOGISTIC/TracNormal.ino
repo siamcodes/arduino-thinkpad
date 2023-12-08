@@ -2,9 +2,9 @@ void Trac(int MotorSpeed) { //เดินตามเส้นธรรมด�
   ConvertADC();
   if ( C == 0 ) Forward(MotorSpeed, 1);
   else if (L2 == 0) tl(70);
-  else if (L1 == 0) tl(45);
+  else if (L1 == 0) tl(40);
   else if (R2 == 0) tl(70);
-  else if (R1 == 0) tr(45);
+  else if (R1 == 0) tr(40);
 }
 
 void TracNormalJC(int MotorSpeed, int Time) {  //แทรกเส้นธรรมดาเจอแยกหยุด
@@ -27,9 +27,8 @@ void TracNormalTime(int MotorSpeed, int Time) { //แทรกเส้นธร
 
 void TracBW(int MotorSpeed) { //เดินตามเส้นธรรมดา
   ConvertADC();
-  if (BL == 1 && BR == 1) Backward(MotorSpeed, 1);
+  if (BC == 0) Backward(MotorSpeed, 1);
   else if (BL == 0) tr(30);
-  else if (BC == 0) tr(30);
   else if (BR == 0) tl(30);
 }
 

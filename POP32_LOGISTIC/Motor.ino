@@ -20,7 +20,7 @@ void TurnLeft() { //เลี้ยวซ้าย
   sl(TurnSpeed); //หมุนซ้าย
   delay(150);
   ConvertADC();
-  while (L1 == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
+  while (L2 == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
     ConvertADC();
   }
   MotorStop();
@@ -31,19 +31,40 @@ void TurnRight() { //เลี้ยวขวา
   sr(TurnSpeed); //หมุนซ้าย
   delay(150);    //ปรับค่าให้เลี้ยวตรงเส้น
   ConvertADC();
+  while (R2 == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
+    ConvertADC();
+  }
+  MotorStop();
+}
+
+void UTurn() { //ขวา
+  MotorStop();
+  sl(TurnSpeed); //หมุนซ้าย
+  delay(350);    //ปรับค่าให้เเเลยแยกตัด เพื่อหมุนกลับ
+  ConvertADC();
   while (R1 == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
     ConvertADC();
   }
   MotorStop();
 }
 
-
-void UTurn() { //ขวา
+void TurnLeftBW() { //เลี้ยวซ้าย
   MotorStop();
-  sr(TurnSpeed); //หมุนซ้าย
-  delay(300);    //ปรับค่าให้เเเลยแยกตัด เพื่อหมุนกลับ
+  sl(40); //หมุนซ้าย
+  delay(150);
   ConvertADC();
-  while (R1 == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
+  while (BL == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
+    ConvertADC();
+  }
+  MotorStop();
+}
+
+void TurnRightBW() { //เลี้ยวขวา
+  MotorStop();
+  sr(60); //หมุนซ้าย
+  delay(150);    //ปรับค่าให้เลี้ยวตรงเส้น
+  ConvertADC();
+  while (BR == 1) { //ถ้่าเจอขาวอยูู่่ วนอ่านค่าสีไไปเรื่อยๆ จนเจอดำ
     ConvertADC();
   }
   MotorStop();
