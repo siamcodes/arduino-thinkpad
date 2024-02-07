@@ -6,6 +6,7 @@ void ReadSensor() {  //ค่าดิบ
   }
 }
 
+
 void readCalibrate() { //ค่าที่ Calibrate แล้ว
   ReadSensor();
   for (int i = 0; i < NUM_SENSORS; i++) {
@@ -14,26 +15,12 @@ void readCalibrate() { //ค่าที่ Calibrate แล้ว
     calmin = MinValue[i];
     calmax = MaxValue[i];
     x = map(F[i], calmin, calmax, 1000, 0);  //ถ้าที่ฟังก์ชัน stdPID เมื่อให้ baseSpeed = 0  ไม่เกาะเส้นให้แก้ 1000-0 หรือ 0-1000
+   // x = map(F[i], calmin, calmax, 0, 1000);  //ถ้าที่ฟังก์ชัน stdPID เมื่อให้ baseSpeed = 0  ไม่เกาะเส้นให้แก้ 1000-0 หรือ 0-1000
     if (x < 0) x = 0;
     if (x > 1000) x = 1000;
     F[i] = x;
   }
 }
-
-void readCalibrateBack() { //ค่าที่ Calibrate แล้ว
-  ReadSensor();
-  for (int i = 0; i < NUM_SENSORS; i++) {
-    unsigned int calmin, calmax;
-    long x = 0;
-    calmin = MinValue[i];
-    calmax = MaxValue[i];
-    x = map(F[i], calmin, calmax, 1000, 0);  //ถ้าที่ฟังก์ชัน stdPID เมื่อให้ baseSpeed = 0  ไม่เกาะเส้นให้แก้ 1000-0 หรือ 0-1000
-    if (x < 0) x = 0;
-    if (x > 1000) x = 1000;
-    F[i] = x;
-  }
-}
-
 
 void CalibrateSensor(int pauseTime, int samples) {
   for (int i = 0; i < NUM_SENSORS; i++) {
@@ -134,3 +121,20 @@ void SerialPosition() {
 
   }
 }
+
+/////////////////////////////////////////////
+/*
+void readCalibrateBack() { //ค่าที่ Calibrate แล้ว
+  ReadSensor();
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    unsigned int calmin, calmax;
+    long x = 0;
+    calmin = MinValue[i];
+    calmax = MaxValue[i];
+    x = map(F[i], calmin, calmax, 1000, 0);  //ถ้าที่ฟังก์ชัน stdPID เมื่อให้ baseSpeed = 0  ไม่เกาะเส้นให้แก้ 1000-0 หรือ 0-1000
+    if (x < 0) x = 0;
+    if (x > 1000) x = 1000;
+    F[i] = x;
+  }
+}
+*/

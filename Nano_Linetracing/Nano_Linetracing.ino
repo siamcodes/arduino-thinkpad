@@ -31,10 +31,10 @@ void setup() {
   //TurnLeft();
   //TurnRight();
   //UTurnRight();
-  UTurnLeft();
-  MotorStop();
+  //UTurnLeft();
+  //MotorStop();
 }
 
 void loop() {
-  //ShowADC();
+  ShowADC();
 }
