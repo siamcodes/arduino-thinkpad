@@ -8,7 +8,7 @@ long Timer0, StartTimer0, Timer1, StartTimer1;   //ตัวแปรจับ�
 int Kp, Ki, Kd, Error, PreError, Integral, MaxSpeed; //ตัวแปรแกี่ยวกับ PID
 
 void setup() {
-  Speed = 200;
+  Speed = 180;
   SlowSpeed = 70;
   ACCSpeed = 150;
   TurnSpeed = 100;
@@ -21,6 +21,7 @@ void setup() {
 
   
   Forward(Speed, 2000);
+  MotorStop();
   Backward(Speed, 2000);
   //TurnLeft();
   //TurnRight();
@@ -30,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  
-  //ShowADC();
+  Forward(Speed, 2000);
+  ShowADC();
   
 }
